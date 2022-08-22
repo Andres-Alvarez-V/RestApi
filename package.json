@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "Shoppy-Fast",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aqui puede ir el link de la documentacion de la API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
