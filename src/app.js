@@ -1,6 +1,7 @@
 import express from 'express'
 import morgan from "morgan";
 import pkg from "../package.json";
+import cors from "cors"
 
 import productsRoutes from './routes/products.routes'
 import adminRoutes from './routes/admin.routes'
@@ -9,6 +10,7 @@ const app = express()
 
 app.set('pkg', pkg);
 
+app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'));
 
