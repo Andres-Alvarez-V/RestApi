@@ -6,8 +6,8 @@ export const createProduct = async (req, res) => {
         
         const {id, name, marca, description, price, imgURL, cantidad} = req.body;
 
-        const product = await Product.find({id : req.params.productId});
-        if(product !== []){
+        const products = await Product.find({id});
+        if(products.length !== 0){
             return res.status(400).json({
                 success : false,
                 msg : "Product is already in the databse"
@@ -43,12 +43,12 @@ export const updateProductById = async (req, res) => {
 export const deleteProductById = async (req, res) => {
     const item = await Product.findOneAndDelete({id : req.params.productId});
     if(!item){
-        return res.status(401).json({
+        return res.status(304).json({
             success : false,
             msg : "Item doesn't exist "
         });
     }
-    res.status(204).json({
+    res.status(200).json({
         success : true,
         msg : "Delete complete"
     });
