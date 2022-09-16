@@ -10,8 +10,8 @@ export const generarIva = (req, res)=> { // Se calcula el iva con el 19%
         products.forEach( (product) => {
             const {item, quantity} = product
             
-            ivaTotal += item.price * 0.19
-            precioTotal += item.price
+            ivaTotal += item.price * 0.19*quantity
+            precioTotal += item.price*quantity
         });
 
         precioTotal += ivaTotal
