@@ -5,6 +5,7 @@ import cors from "cors"
 
 import productsRoutes from './routes/products.routes'
 import adminRoutes from './routes/admin.routes'
+import funcionalRoutes from './routes/functional.routes'
 const app = express()
 
 
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/products', productsRoutes)
 app.use('/api/admin', adminRoutes)
+app.use('/api/f', funcionalRoutes)
 
 
 
