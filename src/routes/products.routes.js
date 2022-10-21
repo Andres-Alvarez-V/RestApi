@@ -7,6 +7,7 @@ const router = Router();
 
 
 router.get('/:productId', productsCtrl.getProductById)
+router.get('/', productsCtrl.getProductAll)
 
 router.post('/', verifyToken, productsCtrl.createProduct)
 

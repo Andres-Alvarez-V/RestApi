@@ -28,6 +28,11 @@ export const getProductById = async (req, res) => {
     res.status(200).json(product)
 }
 
+export const getProductAll = async (req, res) => {
+    const product = await Product.find();
+    res.status(200).json(product)
+}
+
 export const updateProductById = async (req, res) => {
     try {
         const updatedProduct = await Product.findOneAndUpdate({id : req.params.productId}, req.body, {
